@@ -1,5 +1,5 @@
 {% set name = "coinbase-advanced-py" %}
-{% set version = "1.4.2" %}
+{% set version = "1.4.3" %}
 
 package:
   name: {{ name|lower }}
@@ -7,12 +7,12 @@ package:
 
 source:
   url: https://github.com/coinbase/coinbase-advanced-py/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 57c6658fb79d060797b3952752b16dcf7993bcac2baa205a1ff9eae9ad33535e
+  sha256: 0622c0f9dd1791a2b37e6e433898daa12b0cf591e0c5ccf958ec8920fa926782
 
 build:
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
-  number: 1
+  number: 0
 
 requirements:
   host:
