@@ -19,6 +19,7 @@ requirements:
     - pip
     - python >=3.8
     - requests >=2.31.0
+    - setuptools
   run:
     - backoff >=2.2.1
     - cryptography >=42.0.0
