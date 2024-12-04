@@ -1,6 +1,6 @@
 {% set name = "coinbase-advanced-py" %}
 {% set version = "1.8.2" %}
-{% python_min = 3.8 %}
+{% set python_min = 3.8 %}
 
 package:
   name: {{ name|lower }}
