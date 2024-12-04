@@ -1,5 +1,6 @@
 {% set name = "coinbase-advanced-py" %}
-{% set version = "1.7.0" %}
+{% set version = "1.8.2" %}
+{% set python_min = 3.8 %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +8,7 @@ package:
 
 source:
   url: https://github.com/coinbase/coinbase-advanced-py/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: bd878be8e4cd82af91500ecd0b75f52785b576a9be68a9f784269a057ea285b7
+  sha256: 8fe62717eb52c9e5e9e5321bb06b5cffa1c924165c7180677bec8c71bf12b3c4
 
 build:
   noarch: python
@@ -17,15 +18,15 @@ build:
 requirements:
   host:
     - pip
-    - python >=3.8
+    - python {{ python_min }}
     - requests >=2.31.0
     - setuptools
   run:
     - backoff >=2.2.1
     - cryptography >=42.0.0
     - PyJWT >=2.8.0
-    - websockets >=12.0
-    - python >=3.8
+    - websockets >=12.0,<14
+    - python >={{ python_min }}
 
 test:
   imports:
@@ -36,6 +37,7 @@ test:
     - requests-mock==1.11.0
     - asynctest==0.13.0
     - pip
+    - python {{ python_min }}
   commands:
     - pip check
     - python -m unittest discover -v
